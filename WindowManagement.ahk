@@ -187,11 +187,13 @@ Return
   ; offset to additionally move the window so that window contents
   ; stay at the same position
   xOffset := 7
-  if(Style & 0xC40000) {
-    WinSet, Style, -0xC40000, A
+  if(Style & 0xC00000) {
+    WinSet, Style, -0xC00000, A
+    ; WinSet, Style, -0xC40000, A
     ; WinMove,A,,X+xOffset,Y,W,H
   } else {
-    WinSet, Style, +0xC40000, A
+    WinSet, Style, +0xC00000, A
+    ; WinSet, Style, +0xC40000, A
     ; WinMove,A,,X-xOffset,Y,W,H
   }
 return
@@ -199,7 +201,7 @@ return
 ; (attempt to) hide tab and address bar from firefox
 #w::
   WinGetPos,winx,winy,width,height,A ; get dimensions of currently active window
-  WinSet, Region, 0-62 W%width% H%height%, A
+  WinSet, Region, 0-127 W%width% H%height%, A
 return
 
 ; restore window to original view area
@@ -214,8 +216,8 @@ return
 ; return
 
 ; ; Win key and r
-#r::
-  MsgBox, Reloading script
-  ; reload script on win r
-  Reload
-Return
+; #r::
+;   MsgBox, Reloading script
+;   ; reload script on win r
+;   Reload
+; Return

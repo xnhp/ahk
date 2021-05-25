@@ -6,6 +6,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ;; remap caps to ctrl for emacs
 ;; https://stackoverflow.com/questions/21162972/autohotkey-how-to-remap-ctrl-with-alt-key-and
-CapsLock::Lctrl
+CapsLock::Esc
 
 ; RAlt::Esc
